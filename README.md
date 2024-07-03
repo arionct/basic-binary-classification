@@ -1,1 +1,1 @@
-# basic-binary-classification
+# basic-binary-classification-neural-network
