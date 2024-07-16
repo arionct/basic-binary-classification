@@ -57,12 +57,12 @@ def train_model(initializations, lr, dataset, epochs):
         dy_hat_avg, dz2_avg, dw2_avg, db2_avg, da1_avg, dz1_avg, dw1_avg, db1_avg = grads_avg
         
         if epoch == 0 or (epoch + 1) % 1000 == 0:
-            print("epoch #" + str(epoch + 1))
-            print("weight1: " + str(w1))
-            print("weight2: " + str(w2))
-            print("bias1: " + str(b1))
-            print("bias2: " + str(b2))
-            print("loss: " + str(L_avg))
+            print(f"epoch #{epoch + 1}")
+            print(f"weight1: {w1:.4f}")
+            print(f"weight2: {w2:.4f}")
+            print(f"bias1: {b1:.4f}")
+            print(f"bias2: {b2:.4f}")
+            print(f"LOSS: {L_avg:.4f}")
             print()
         
         w1 = w1 - (lr * dw1_avg)
