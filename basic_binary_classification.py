@@ -4,14 +4,14 @@ import random
 
 def forward_pass(w1, w2, b1, b2, x, y):
     z1 = x * w1 + b1
-    a1 = max(0, z1)
+    a1 = max(0, z1)                     # basic ReLU activation
     z2 = a1 * w2 + b2
-    y_hat = 1 / (1 + e ** (-z2))
+    y_hat = 1 / (1 + e ** (-z2))        # Sigmoid activation
     
     return z1, a1, z2, y_hat
 
 def compute_loss(y, y_hat):
-    L = -y * log(y_hat) - (1 - y) * log(1 - y_hat)
+    L = -y * log(y_hat) - (1 - y) * log(1 - y_hat)      # cross-entropy loss function
     
     return L
 
@@ -22,7 +22,7 @@ def backward_pass(w2, x, y, y_hat, z1, a1):
     db2 = dz2
     
     da1 = dz2 * w2
-    dz1 = da1 * (1 if z1 > 0 else 0)
+    dz1 = da1 * (1 if z1 > 0 else 0)    # ReLU prime
     dw1 = dz1 * x
     db1 = dz1
     
