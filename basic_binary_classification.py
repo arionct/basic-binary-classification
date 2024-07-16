@@ -56,13 +56,14 @@ def train_model(initializations, lr, dataset, epochs):
             grads_avg[i] = mean([row[i] for row in gradients])
         dy_hat_avg, dz2_avg, dw2_avg, db2_avg, da1_avg, dz1_avg, dw1_avg, db1_avg = grads_avg
         
-        print("epoch #" + str(epoch + 1))
-        print("weight1: " + str(w1))
-        print("weight2: " + str(w2))
-        print("bias1: " + str(b1))
-        print("bias2: " + str(b2))
-        print("loss: " + str(L_avg))
-        print()
+        if epoch == 0 or (epoch + 1) % 1000 == 0:
+            print("epoch #" + str(epoch + 1))
+            print("weight1: " + str(w1))
+            print("weight2: " + str(w2))
+            print("bias1: " + str(b1))
+            print("bias2: " + str(b2))
+            print("loss: " + str(L_avg))
+            print()
         
         w1 = w1 - (lr * dw1_avg)
         w2 = w2 - (lr * dw2_avg)
