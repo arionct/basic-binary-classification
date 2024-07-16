@@ -68,19 +68,23 @@ def train_model(initializations, lr, dataset, epochs):
         w2 = w2 - (lr * dw2_avg)
         b1 = b1 - (lr * db1_avg)
         b2 = b2 - (lr * db2_avg)
-        
-weight1 = 1.1
-weight2 = -0.5
-bias1 = 0.6
-bias2 = -0.2
-learning_rate = 0.01
-dataset = [
-    (1, 0), (1, 0), (1, 0), (1, 0), (2, 0),
-    (2, 1), (3, 0), (3, 0), (4, 0), (5, 1),
-    (5, 0), (6, 1), (7, 1), (7, 0), (8, 1),
-    (8, 0), (9, 1), (9, 1), (9, 1), (10, 1),
-    (10, 1), (10, 1)
-]
-epochs = 10000
 
-train_model([weight1, weight2, bias1, bias2], learning_rate, dataset, epochs)
+def main():  
+    weight1 = 1.1
+    weight2 = -0.5
+    bias1 = 0.6
+    bias2 = -0.2
+    learning_rate = 0.01
+    dataset = [
+        (1, 0), (1, 0), (1, 0), (1, 0), (2, 0),
+        (2, 1), (3, 0), (3, 0), (4, 0), (5, 1),
+        (5, 0), (6, 1), (7, 1), (7, 0), (8, 1),
+        (8, 0), (9, 1), (9, 1), (9, 1), (10, 1),
+        (10, 1), (10, 1)
+    ]
+    epochs = 10000
+
+    train_model([weight1, weight2, bias1, bias2], learning_rate, dataset, epochs)
+
+if __name__ == "__main__":
+    main()
