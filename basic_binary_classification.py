@@ -71,10 +71,10 @@ def train_model(initializations, lr, dataset, epochs):
         b2 = b2 - (lr * db2_avg)
 
 def main():  
-    weight1 = 1.1
-    weight2 = -0.5
-    bias1 = 0.6
-    bias2 = -0.2
+    weight1 = random.uniform(-1, 1)
+    weight2 = random.uniform(-1, 1)
+    bias1 = random.uniform(-0.5, 0.5)
+    bias2 = random.uniform(-0.5, 0.5)
     learning_rate = 0.01
     dataset = [
         (1, 0), (1, 0), (1, 0), (1, 0), (2, 0),
